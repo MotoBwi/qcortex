@@ -136,7 +136,7 @@ Run `qcortex doctor` to surface risky/misconfigured DM policies.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=MotoBwi/qcortex&type=date&legend=top-left)](https://www.star-history.com/#MotoBwi/qcortex&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/image?repos=MotoBwi/qcortex.git&type=date&legend=top-left)](https://www.star-history.com/?repos=MotoBwi%2Fqcortex.git&type=date&legend=top-left)
 
 ## Everything we built so far
 
