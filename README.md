@@ -94,7 +94,7 @@ Details: [Development channels](https://docs.qcortex.ai/install/development-chan
 Prefer `pnpm` for builds from source. Bun is optional for running TypeScript directly.
 
 ```bash
-git clone https://github.com/Quantumhash-Corporation/qcortex.git
+git clone https://github.com/MotoBwi/qcortex.git
 cd qcortex
 
 pnpm install
