@@ -1,0 +1,575 @@
+# Instincts generated from https://github.com/MotoBwi/qcortex
+# Generated: 2026-04-02T08:06:49.469Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: qcortex-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Commit Length
+
+## Action
+
+Keep commit messages concise (~43 characters)
+
+## Evidence
+
+- Average commit message length: 43 chars
+- Based on 9 commits
+
+---
+id: qcortex-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: qcortex-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: qcortex-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: qcortex-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: acp, agents, auto-reply, browser, canvas-host
+
+---
+id: qcortex-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: qcortex-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: qcortex-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: qcortex-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Test Mocking
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: vi.mock
+- Consistent across test files
+
+---
+id: qcortex-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Test Types
+
+## Action
+
+Write unit, integration, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration, e2e
+- Coverage config: yes
+
+---
+id: qcortex-workflow-security-dependency-upgrade
+trigger: "when doing security dependency upgrade"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Workflow Security Dependency Upgrade
+
+## Action
+
+Follow the security-dependency-upgrade workflow:
+1. Detect vulnerability in a dependency (e.g., via Snyk/Dependabot).
+2. Update the affected dependency version in package.json or equivalent manifest.
+3. Commit the change with a message referencing the vulnerability or upgrade.
+4. Optionally, merge an automated pull request.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, extensions/zalo/package.json
+
+---
+id: qcortex-workflow-android-gradle-dependency-bump
+trigger: "when doing android gradle dependency bump"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Workflow Android Gradle Dependency Bump
+
+## Action
+
+Follow the android-gradle-dependency-bump workflow:
+1. Identify outdated dependencies in apps/android via automation.
+2. Update versions in build.gradle.kts, gradle-wrapper.properties, and related files.
+3. Update gradle-wrapper.jar and scripts if needed.
+4. Commit all changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: apps/android/app/build.gradle.kts, apps/android/benchmark/build.gradle.kts, apps/android/build.gradle.kts
+
+---
+id: qcortex-workflow-readme-documentation-update
+trigger: "when doing readme documentation update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/MotoBwi/qcortex
+---
+
+# Qcortex Workflow Readme Documentation Update
+
+## Action
+
+Follow the readme-documentation-update workflow:
+1. Edit README.md with new or corrected information.
+2. Commit the change with a message indicating a README update.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: README.md
+
+---
+id: qcortex-instinct-file-naming-camelCase
+trigger: "When creating a new file in the codebase."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase.
+
+## Evidence
+
+- Pattern in files: src/autoReply.ts, src/commands/parseCommand.ts
+
+---
+id: qcortex-instinct-function-naming-camelCase
+trigger: "When defining a new function."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase.
+
+## Evidence
+
+- Pattern in code: function handleEvent() {}
+- Pattern in files: src/agents/agentManager.ts
+
+---
+id: qcortex-instinct-class-naming-PascalCase
+trigger: "When defining a new class."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase.
+
+## Evidence
+
+- Pattern in code: class AgentManager {}
+- Pattern in files: src/agents/agentManager.ts
+
+---
+id: qcortex-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE.
+
+## Evidence
+
+- Pattern in code: const MAX_RETRIES = 3;
+- Pattern in files: src/config/constants.ts
+
+---
+id: qcortex-instinct-import-style-relative
+trigger: "When importing modules within the repository."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Import Style Relative
+
+## Action
+
+Use relative import paths.
+
+## Evidence
+
+- Pattern in files: import { foo } from '../utils/foo';
+
+---
+id: qcortex-instinct-export-style-mixed
+trigger: "When exporting functions, classes, or constants."
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Export Style Mixed
+
+## Action
+
+Use either named or default exports as appropriate.
+
+## Evidence
+
+- Pattern in files: export default function Foo() {}
+- export { Bar } from './Bar';
+
+---
+id: qcortex-instinct-test-file-pattern
+trigger: "When writing a test file."
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts.
+
+## Evidence
+
+- Pattern in files: src/agents/agentManager.test.ts
+
+---
+id: qcortex-instinct-testing-framework-vitest
+trigger: "When writing or running tests."
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Testing Framework Vitest
+
+## Action
+
+Use the Vitest testing framework.
+
+## Evidence
+
+- Pattern in config: vitest.config.ts
+- Pattern in files: import { describe, it } from 'vitest';
+
+---
+id: qcortex-instinct-test-types-mixed
+trigger: "When designing tests."
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Test Types Mixed
+
+## Action
+
+Include unit, integration, and e2e tests as needed.
+
+## Evidence
+
+- Pattern in files: src/commands/parseCommand.test.ts (unit)
+- scripts/e2e/Dockerfile (e2e)
+
+---
+id: qcortex-instinct-mocking-style-vi.mock
+trigger: "When mocking modules or functions in tests."
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Mocking Style Vi.mock
+
+## Action
+
+Use vi.mock for mocking.
+
+## Evidence
+
+- Pattern in files: vi.mock('../utils/foo');
+
+---
+id: qcortex-instinct-commit-prefix-fix-build
+trigger: "When making a commit to fix a bug or update build/dependencies."
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Commit Prefix Fix Build
+
+## Action
+
+Prefix the commit message with 'fix' or 'build' as appropriate.
+
+## Evidence
+
+- Seen in commit: fix: package.json to reduce vulnerabilities
+- build(deps): bump the android-deps group
+
+---
+id: qcortex-instinct-commit-message-length
+trigger: "When writing a commit message."
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Commit Message Length
+
+## Action
+
+Keep the commit message concise (around 43 characters on average).
+
+## Evidence
+
+- Average commit message length: 43
+- Example: fix: extensions/zalo/package.json to reduce vulnerabilities
+
+---
+id: qcortex-instinct-security-dependency-upgrade
+trigger: "When a security vulnerability is detected in a dependency."
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Security Dependency Upgrade
+
+## Action
+
+Update the affected dependency version in package.json or equivalent manifest and commit with a message referencing the vulnerability or upgrade.
+
+## Evidence
+
+- Workflow: security-dependency-upgrade
+- Seen in commit: fix: package.json to reduce vulnerabilities
+
+---
+id: qcortex-instinct-android-gradle-dependency-bump
+trigger: "When dependencies in the Android project need to be updated (routine maintenance or new releases)."
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Android Gradle Dependency Bump
+
+## Action
+
+Update versions in build.gradle.kts, gradle-wrapper.properties, and related files, then commit all changes together.
+
+## Evidence
+
+- Workflow: android-gradle-dependency-bump
+- Seen in commit: build(deps): bump the android-deps group
+
+---
+id: qcortex-instinct-readme-documentation-update
+trigger: "When documentation needs to be clarified, updated, or corrected."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: MotoBwi/qcortex
+---
+
+# Qcortex Instinct Readme Documentation Update
+
+## Action
+
+Edit README.md and commit the change with a message indicating a README update.
+
+## Evidence
+
+- Workflow: readme-documentation-update
+- Seen in commit: Update README.md
+
